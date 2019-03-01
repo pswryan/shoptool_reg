@@ -7,7 +7,7 @@
         <methods>
           <include name="launchBrowser"/>
           <include name="importJSON"/>
-          <include name="tests_field_values"/>
+          <include name="checking_Platform"/>
         </methods>
       </class> <!-- shop_tool_regression_qa.Konami_shop_tool_regression -->
     </classes>

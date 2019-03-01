@@ -3,6 +3,7 @@ package shop_tool_regression_qa;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -603,11 +604,59 @@ public class Konami_shop_tool_regression {
 	} 			/* This is where testing_Theme_End_time ends */
 
 	
-	  @Test(priority = 10) public void Saving_Edited_Event() throws Exception{
-	  WebDriverWait wait = new WebDriverWait(driver, 10); WebElement saveEvent =
-	  wait.until(ExpectedConditions.visibilityOfElementLocated(By.
-	  xpath("//button[@class='mat-raised-button']//span[contains(text(),'Save Shop Event')]"
-	  ))); saveEvent.click(); }
+	@Test(priority = 6) public void checking_Platform() throws Exception{
+		
+		// De-selects Platform: Amazon 
+		try {
+			WebElement Platform = driver.findElement(By.xpath("//div[@class='mat-select-arrow']"));
+			Platform.click();
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver
+					.findElement(By.xpath("//mat-option[@id='mat-option-2']//mat-pseudo-checkbox[@class='mat-option-pseudo-checkbox mat-pseudo-checkbox ng-star-inserted mat-pseudo-checkbox-checked']")));
+			
+			WebElement pp = driver.findElement(By.xpath("//mat-option[@id='mat-option-2']"));
+			pp.sendKeys(Keys.ESCAPE);
+			
+			
+			System.out.println("Platform: Amazon de-selected");
+
+		} catch (Exception e) {
+
+			System.out.println("Failed to de-select Platform: Amazon");
+
+			throw (e);
+		}
+		
+		/* Waits for a bit before selecting again */ Thread.sleep(1000);
+		
+		// Selects Platform: Amazon after de-selecting Amazon Platform
+		try {
+			WebElement Platform = driver.findElement(By.xpath("//div[@class='mat-select-arrow']"));
+			Platform.click();
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver
+					.findElement(By.xpath("//mat-pseudo-checkbox[@class='mat-option-pseudo-checkbox mat-pseudo-checkbox ng-star-inserted']")));
+			
+			WebElement pp = driver.findElement(By.xpath("//mat-option[@id='mat-option-2']"));
+			pp.sendKeys(Keys.ESCAPE);
+			
+			
+			System.out.println("Platform: Amazon selected");
+
+		} catch (Exception e) {
+
+			System.out.println("Failed to select Platform: Amazon");
+
+			throw (e);
+		}
+		
+	} 	/* This is where checking_Platform() ends */
+	
+	/*
+	 * @Test(priority = 10) public void Saving_Edited_Event() throws Exception{
+	 * WebDriverWait wait = new WebDriverWait(driver, 10); WebElement saveEvent =
+	 * wait.until(ExpectedConditions.visibilityOfElementLocated(By.
+	 * xpath("//button[@class='mat-raised-button']//span[contains(text(),'Save Shop Event')]"
+	 * ))); saveEvent.click(); }
+	 */
 	 
 	
 
