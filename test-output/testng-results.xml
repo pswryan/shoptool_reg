@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="7" passed="7">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="27217" started-at="2019-03-01T17:57:15Z" finished-at="2019-03-01T17:57:42Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="27217" started-at="2019-03-01T17:57:15Z" finished-at="2019-03-01T17:57:42Z">
+      <class name="shop_tool_regression_qa.Konami_shop_tool_regression">
+        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:shop_tool_regression_qa.Konami_shop_tool_regression@675d3402]" name="launchBrowser" is-config="true" duration-ms="5589" started-at="2019-03-01T17:57:09Z" finished-at="2019-03-01T17:57:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method status="PASS" signature="importJSON()[pri:0, instance:shop_tool_regression_qa.Konami_shop_tool_regression@675d3402]" name="importJSON" is-config="true" duration-ms="3250" started-at="2019-03-01T17:57:15Z" finished-at="2019-03-01T17:57:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- importJSON -->
+        <test-method status="PASS" signature="verify_field_present()[pri:1, instance:shop_tool_regression_qa.Konami_shop_tool_regression@675d3402]" name="verify_field_present" duration-ms="474" started-at="2019-03-01T17:57:18Z" finished-at="2019-03-01T17:57:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_field_present -->
+        <test-method status="PASS" signature="tests_field_values()[pri:2, instance:shop_tool_regression_qa.Konami_shop_tool_regression@675d3402]" name="tests_field_values" duration-ms="7251" started-at="2019-03-01T17:57:19Z" finished-at="2019-03-01T17:57:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tests_field_values -->
+        <test-method status="PASS" signature="testing_event_start_time()[pri:3, instance:shop_tool_regression_qa.Konami_shop_tool_regression@675d3402]" name="testing_event_start_time" duration-ms="4475" started-at="2019-03-01T17:57:26Z" finished-at="2019-03-01T17:57:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testing_event_start_time -->
+        <test-method status="PASS" signature="testing_Theme_Start_time()[pri:4, instance:shop_tool_regression_qa.Konami_shop_tool_regression@675d3402]" name="testing_Theme_Start_time" duration-ms="4258" started-at="2019-03-01T17:57:30Z" finished-at="2019-03-01T17:57:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testing_Theme_Start_time -->
+        <test-method status="PASS" signature="testing_event_end_time()[pri:4, instance:shop_tool_regression_qa.Konami_shop_tool_regression@675d3402]" name="testing_event_end_time" duration-ms="4333" started-at="2019-03-01T17:57:34Z" finished-at="2019-03-01T17:57:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testing_event_end_time -->
+        <test-method status="PASS" signature="testing_Theme_End_time()[pri:5, instance:shop_tool_regression_qa.Konami_shop_tool_regression@675d3402]" name="testing_Theme_End_time" duration-ms="3023" started-at="2019-03-01T17:57:39Z" finished-at="2019-03-01T17:57:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testing_Theme_End_time -->
+        <test-method status="PASS" signature="Saving_Edited_Event()[pri:10, instance:shop_tool_regression_qa.Konami_shop_tool_regression@675d3402]" name="Saving_Edited_Event" duration-ms="133" started-at="2019-03-01T17:57:42Z" finished-at="2019-03-01T17:57:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Saving_Edited_Event -->
+      </class> <!-- shop_tool_regression_qa.Konami_shop_tool_regression -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
