@@ -1,5 +1,6 @@
 package shop_tool_regression_qa;
 
+import org.testng.annotations.Test;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -13,6 +14,7 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+@SuppressWarnings("unused")
 public class Konami_shop_tool_regression {
 	WebDriver driver;
 	public String baseUrl = "http://shopadmin-qa.playstudios.com/shopadmin/#/konamishop/management/shopevents";
@@ -48,8 +50,27 @@ public class Konami_shop_tool_regression {
 		driver.findElement(By.xpath("(//mat-icon[@class='mat-icon material-icons' and ./text()='edit'])[2]")).click();
 	}
 
-	// verify_field_present checks for element present
+	//Verify Message 
 	@Test(priority = 1)
+	public void verify_message() throws Exception{
+		
+		try {
+			driver.findElement(By.xpath("//*[contains(text(), 'Success')]"));
+
+			System.out.println("Uploaded config is ok!");
+
+		} catch (Exception e) {
+
+			System.out.println("Uploaded config contains Error/Warnings!");
+
+			throw (e);
+		}
+		
+		
+		
+	}
+	// verify_field_present checks for element present
+	@Test(priority = 2)
 	public void verify_field_present() throws Exception {
 
 		/*
@@ -272,7 +293,7 @@ public class Konami_shop_tool_regression {
 	
 
 	// Inputs or changes field values under Shop Event Details
-	@Test(priority = 2)
+	@Test(priority = 3)
 
 	public void tests_field_values() throws Exception {
 
@@ -403,7 +424,7 @@ public class Konami_shop_tool_regression {
 
 
 	// tests Shop Event Start Date/Time picker
-	@Test(priority = 3)
+	@Test(priority = 4)
 	public void testing_event_start_time() throws Exception {
 
 		// clicks Start Time(UTC) field to launch Calendar
@@ -447,10 +468,10 @@ public class Konami_shop_tool_regression {
 		Thread.sleep(1500);
 	}
 
-	// tests Shop Event End Date/Time picker
-	@Test(priority = 4)
-	public void testing_event_end_time() throws Exception {
 
+	// tests Shop Event End Date/Time picker
+	@Test(priority = 5)
+	public void testing_Event_End_time() throws Exception {
 		// clicks Start Time(UTC) field to launch Calendar
 		driver.findElement(By.xpath("//input[@id='mat-input-8']")).click();
 		// clicks Year drop-down button
@@ -490,119 +511,9 @@ public class Konami_shop_tool_regression {
 				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(),'Set')]")));
 		SetEnd.click();
 		Thread.sleep(1500);
-	}
 
-	// tests Shop Event Theme Start Date/Time picker
-	@Test(priority = 4)
-	public void testing_Theme_Start_time() throws Exception {
-
-		// clicks Start Time(UTC) field to launch Calendar
-		WebDriverWait wait = new WebDriverWait(driver, 20); /* making it wait */
-
-		((JavascriptExecutor) driver).executeScript("arguments[0].click();", /* \\\\\This is the new JS Executor\\\\\ */
-				driver.findElement(By.xpath("//div[@class='mat-form-field-wrapper']//input[@id='mat-input-12']")));
-
-		/*
-		 * *******This bit right here may be going out******** WebElement ThemeStart =
-		 * wait.until(ExpectedConditions .elementToBeClickable(By.xpath(
-		 * "//div[@class='mat-form-field-wrapper']//input[@id='mat-input-12']")));
-		 * ThemeStart.click();
-		 */
-
-		// clicks Year drop-down button
-		// WebDriverWait wait = new WebDriverWait(driver, 10);
-		WebElement yrDropDown = wait.until(ExpectedConditions
-				.visibilityOfElementLocated(By.xpath("//span[@class='owl-dt-control-button-arrow']")));
-		yrDropDown.click();
-		// selects year 2020
-		WebElement pickAyr = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//table[@class='owl-dt-calendar-table owl-dt-calendar-multi-year-table']//span[text()='2021']")));
-		pickAyr.click();
-		// selects month of May for year 2020
-		WebElement pickAmonth = wait.until(ExpectedConditions
-				.visibilityOfElementLocated(By.xpath("//tr[@class='ng-star-inserted']//span[contains(text(),'Mar')]")));
-		pickAmonth.click();
-		// selects 10th day of May 2020
-		WebElement pickAdate = wait.until(ExpectedConditions
-				.visibilityOfElementLocated(By.xpath("//tr[@class='ng-star-inserted']//span[contains(text(),'12')]")));
-		pickAdate.click();
-		// selects an hour
-		WebElement pickANhr = wait
-				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@aria-label='Add a hour']")));
-		pickANhr.click();
-		// selects minutes
-		WebElement pickMinutes = wait.until(
-				ExpectedConditions.visibilityOfElementLocated(By.xpath("(//input[@class='owl-dt-timer-input'])[2]")));
-		pickMinutes.clear();
-		pickMinutes.sendKeys("40");
-		// Read Start Date
-		Thread.sleep(1500);
-		String StartsFrom = driver
-				.findElement(By.xpath("(//div[@role='radiogroup']//span[@class='owl-dt-container-info-value'])[2]"))
-				.getText();
-		System.out.println("Shop Event Theme Starts from " + StartsFrom);
-		// Clicking Set after selection
-
-		((JavascriptExecutor) driver).executeScript("arguments[0].click();",
-				driver.findElement(By.xpath("//span[contains(text(),'Set')]")));
-
-		/*
-		 * WebElement SetStart = wait
-		 * .until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-		 * "//span[contains(text(),'Set')]"))); SetStart.click();
-		 */
-		Thread.sleep(1500);
-	}
-
-	// tests Shop Event Theme End Date/Time picker
-	@Test(priority = 5)
-	public void testing_Theme_End_time() throws Exception {
-
-		// clicks Start Time(UTC) field to launch Calendar
-
-		WebDriverWait wait = new WebDriverWait(driver, 10); /* making it wait WebElement */
-
-		((JavascriptExecutor) driver).executeScript("arguments[0].click();", /* \\\\\This is the new JS Executor\\\\\ */
-				driver.findElement(By.xpath("//div[@class='mat-form-field-wrapper']//input[@id='mat-input-13']")));
-		// clicks Year drop-down button
-		((JavascriptExecutor) driver).executeScript("arguments[0].click();",
-				driver.findElement(By.xpath("//span[@class='owl-dt-control-button-arrow']")));
-		// selects year 2023
-		((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(By.xpath(
-				"//table[@class='owl-dt-calendar-table owl-dt-calendar-multi-year-table']//span[text()='2023']")));
-
-		// selects month of Dec for year 2023
-		((JavascriptExecutor) driver).executeScript("arguments[0].click();",
-				driver.findElement(By.xpath("//tr[@class='ng-star-inserted']//span[contains(text(),'Dec')]")));
-
-		// selects 12th day of Dec 2023
-
-		((JavascriptExecutor) driver).executeScript("arguments[0].click();",
-				driver.findElement(By.xpath("//tr[@class='ng-star-inserted']//span[contains(text(),'12')]")));
-
-		// selects an hour
-
-		((JavascriptExecutor) driver).executeScript("arguments[0].click();",
-				driver.findElement(By.xpath("//button[@aria-label='Add a hour']")));
-
-		// selects minutes
-		WebElement pickMinutes = wait.until(
-				ExpectedConditions.visibilityOfElementLocated(By.xpath("(//input[@class='owl-dt-timer-input'])[2]")));
-		pickMinutes.clear();
-		pickMinutes.sendKeys("20");
-		// Read Start Date
-		Thread.sleep(1500);
-		String EndAt = driver
-				.findElement(By.xpath("(//div[@role='radiogroup']//span[@class='owl-dt-container-info-value'])[2]"))
-				.getText();
-		System.out.println("Shop Event Theme Ends At " + EndAt);
-		// Clicking Set after selection
-		((JavascriptExecutor) driver).executeScript("arguments[0].click();",
-				driver.findElement(By.xpath("//span[contains(text(),'Set')]")));
-
-		Thread.sleep(1000);
-	} 			/* This is where testing_Theme_End_time ends */
-
+	}		 /* This is where testing_Theme_End_time() ends */
+	
 	
 	@Test(priority = 6) public void checking_Platform() throws Exception{
 		
@@ -649,6 +560,120 @@ public class Konami_shop_tool_regression {
 		}
 		
 	} 	/* This is where checking_Platform() ends */
+	
+	// tests Shop Event End Date/Time picker
+	@Test(priority = 7)
+	public void testing_Theme_Start_time() throws Exception {
+		// clicks Start Time(UTC) field to launch Calendar
+		WebDriverWait wait = new WebDriverWait(driver, 20); /* making it wait */
+
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", /* \\\\\This is the new JS Executor\\\\\ */
+				driver.findElement(By.xpath("//div[@class='mat-form-field-wrapper']//input[@id='mat-input-12']")));
+
+		/*
+		 * *******This bit right here may be going out******** WebElement ThemeStart =
+		 * wait.until(ExpectedConditions .elementToBeClickable(By.xpath(
+		 * "//div[@class='mat-form-field-wrapper']//input[@id='mat-input-12']")));
+		 * ThemeStart.click();
+		 */
+
+		// clicks Year drop-down button
+		// WebDriverWait wait = new WebDriverWait(driver, 10);
+		WebElement yrDropDown = wait.until(ExpectedConditions
+				.visibilityOfElementLocated(By.xpath("//span[@class='owl-dt-control-button-arrow']")));
+		yrDropDown.click();
+		// selects year 2020
+		WebElement pickAyr = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
+				"//table[@class='owl-dt-calendar-table owl-dt-calendar-multi-year-table']//span[text()='2021']")));
+		pickAyr.click();
+		// selects month of May for year 2020
+		WebElement pickAmonth = wait.until(ExpectedConditions
+				.visibilityOfElementLocated(By.xpath("//tr[@class='ng-star-inserted']//span[contains(text(),'Mar')]")));
+		pickAmonth.click();
+		// selects 10th day of May 2020
+		WebElement pickAdate = wait.until(ExpectedConditions
+				.visibilityOfElementLocated(By.xpath("//tr[@class='ng-star-inserted']//span[contains(text(),'12')]")));
+		pickAdate.click();
+		// selects an hour
+		WebElement pickANhr = wait
+				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@aria-label='Add a hour']")));
+		pickANhr.click();
+		// selects minutes
+		WebElement pickMinutes = wait.until(
+				ExpectedConditions.visibilityOfElementLocated(By.xpath("(//input[@class='owl-dt-timer-input'])[2]")));
+		pickMinutes.clear();
+		pickMinutes.sendKeys("40");
+		// Read Start Date
+		Thread.sleep(1500);
+		String StartsFrom = driver
+				.findElement(By.xpath("(//div[@role='radiogroup']//span[@class='owl-dt-container-info-value'])[2]"))
+				.getText();
+		System.out.println("Shop Theme Starts from " + StartsFrom);
+		// Clicking Set after selection
+
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();",
+				driver.findElement(By.xpath("//span[contains(text(),'Set')]")));
+
+		/*
+		 * WebElement SetStart = wait
+		 * .until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
+		 * "//span[contains(text(),'Set')]"))); SetStart.click();
+		 */
+		Thread.sleep(1500);
+
+	}		 /* This is where testing_event_start_time() ends */
+
+
+	// tests Shop Event Theme End Date/Time picker
+	@Test(priority = 8)
+	public void testing_Theme_End_time() throws Exception {
+
+		// clicks Start Time(UTC) field to launch Calendar
+
+		WebDriverWait wait = new WebDriverWait(driver, 10); /* making it wait WebElement */
+
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", /* \\\\\This is the new JS Executor\\\\\ */
+				driver.findElement(By.xpath("//div[@class='mat-form-field-wrapper']//input[@id='mat-input-13']")));
+		// clicks Year drop-down button
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();",
+				driver.findElement(By.xpath("//span[@class='owl-dt-control-button-arrow']")));
+		// selects year 2023
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(By.xpath(
+				"//table[@class='owl-dt-calendar-table owl-dt-calendar-multi-year-table']//span[text()='2023']")));
+
+		// selects month of Dec for year 2023
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();",
+				driver.findElement(By.xpath("//tr[@class='ng-star-inserted']//span[contains(text(),'Dec')]")));
+
+		// selects 12th day of Dec 2023
+
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();",
+				driver.findElement(By.xpath("//tr[@class='ng-star-inserted']//span[contains(text(),'12')]")));
+
+		// selects an hour
+
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();",
+				driver.findElement(By.xpath("//button[@aria-label='Add a hour']")));
+
+		// selects minutes
+		WebElement pickMinutes = wait.until(
+				ExpectedConditions.visibilityOfElementLocated(By.xpath("(//input[@class='owl-dt-timer-input'])[2]")));
+		pickMinutes.clear();
+		pickMinutes.sendKeys("20");
+		// Read Start Date
+		Thread.sleep(1500);
+		String EndAt = driver
+				.findElement(By.xpath("(//div[@role='radiogroup']//span[@class='owl-dt-container-info-value'])[2]"))
+				.getText();
+		System.out.println("Shop Theme Ends At " + EndAt);
+		// Clicking Set after selection
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();",
+				driver.findElement(By.xpath("//span[contains(text(),'Set')]")));
+
+		Thread.sleep(1000);
+	} 			/* This is where testing_Theme_End_time ends */
+
+
 	
 	/*
 	 * @Test(priority = 10) public void Saving_Edited_Event() throws Exception{

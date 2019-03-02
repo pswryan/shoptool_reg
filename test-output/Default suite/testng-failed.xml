@@ -6,8 +6,8 @@
       <class name="shop_tool_regression_qa.Konami_shop_tool_regression">
         <methods>
           <include name="launchBrowser"/>
+          <include name="verify_message"/>
           <include name="importJSON"/>
-          <include name="checking_Platform"/>
         </methods>
       </class> <!-- shop_tool_regression_qa.Konami_shop_tool_regression -->
     </classes>
