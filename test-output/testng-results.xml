@@ -1,52 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="8" passed="8">
+<testng-results skipped="0" failed="0" ignored="0" total="10" passed="10">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="28510" started-at="2019-03-02T04:49:24Z" finished-at="2019-03-02T04:49:53Z">
+  <suite name="Default suite" duration-ms="31775" started-at="2019-03-02T20:47:43Z" finished-at="2019-03-02T20:48:15Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="28510" started-at="2019-03-02T04:49:24Z" finished-at="2019-03-02T04:49:53Z">
+    <test name="Default test" duration-ms="31775" started-at="2019-03-02T20:47:43Z" finished-at="2019-03-02T20:48:15Z">
       <class name="shop_tool_regression_qa.Konami_shop_tool_regression">
-        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:shop_tool_regression_qa.Konami_shop_tool_regression@51565ec2]" name="launchBrowser" is-config="true" duration-ms="5744" started-at="2019-03-02T04:49:19Z" finished-at="2019-03-02T04:49:24Z">
+        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:shop_tool_regression_qa.Konami_shop_tool_regression@51565ec2]" name="launchBrowser" is-config="true" duration-ms="5566" started-at="2019-03-02T20:47:37Z" finished-at="2019-03-02T20:47:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method status="PASS" signature="importJSON()[pri:0, instance:shop_tool_regression_qa.Konami_shop_tool_regression@51565ec2]" name="importJSON" is-config="true" duration-ms="3245" started-at="2019-03-02T04:49:24Z" finished-at="2019-03-02T04:49:28Z">
+        <test-method status="PASS" signature="importJSON()[pri:0, instance:shop_tool_regression_qa.Konami_shop_tool_regression@51565ec2]" name="importJSON" is-config="true" duration-ms="3249" started-at="2019-03-02T20:47:43Z" finished-at="2019-03-02T20:47:46Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- importJSON -->
-        <test-method status="PASS" signature="verify_message()[pri:1, instance:shop_tool_regression_qa.Konami_shop_tool_regression@51565ec2]" name="verify_message" duration-ms="17" started-at="2019-03-02T04:49:28Z" finished-at="2019-03-02T04:49:28Z">
+        <test-method status="PASS" signature="verify_message()[pri:1, instance:shop_tool_regression_qa.Konami_shop_tool_regression@51565ec2]" name="verify_message" duration-ms="18" started-at="2019-03-02T20:47:46Z" finished-at="2019-03-02T20:47:46Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verify_message -->
-        <test-method status="PASS" signature="verify_field_present()[pri:2, instance:shop_tool_regression_qa.Konami_shop_tool_regression@51565ec2]" name="verify_field_present" duration-ms="445" started-at="2019-03-02T04:49:28Z" finished-at="2019-03-02T04:49:28Z">
+        <test-method status="PASS" signature="verify_field_present()[pri:2, instance:shop_tool_regression_qa.Konami_shop_tool_regression@51565ec2]" name="verify_field_present" duration-ms="467" started-at="2019-03-02T20:47:46Z" finished-at="2019-03-02T20:47:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verify_field_present -->
-        <test-method status="PASS" signature="tests_field_values()[pri:3, instance:shop_tool_regression_qa.Konami_shop_tool_regression@51565ec2]" name="tests_field_values" duration-ms="7261" started-at="2019-03-02T04:49:28Z" finished-at="2019-03-02T04:49:35Z">
+        <test-method status="PASS" signature="tests_field_values()[pri:3, instance:shop_tool_regression_qa.Konami_shop_tool_regression@51565ec2]" name="tests_field_values" duration-ms="7242" started-at="2019-03-02T20:47:47Z" finished-at="2019-03-02T20:47:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tests_field_values -->
-        <test-method status="PASS" signature="testing_event_start_time()[pri:4, instance:shop_tool_regression_qa.Konami_shop_tool_regression@51565ec2]" name="testing_event_start_time" duration-ms="4551" started-at="2019-03-02T04:49:35Z" finished-at="2019-03-02T04:49:40Z">
+        <test-method status="PASS" signature="testing_event_start_time()[pri:4, instance:shop_tool_regression_qa.Konami_shop_tool_regression@51565ec2]" name="testing_event_start_time" duration-ms="4539" started-at="2019-03-02T20:47:54Z" finished-at="2019-03-02T20:47:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testing_event_start_time -->
-        <test-method status="PASS" signature="testing_Event_End_time()[pri:5, instance:shop_tool_regression_qa.Konami_shop_tool_regression@51565ec2]" name="testing_Event_End_time" duration-ms="4362" started-at="2019-03-02T04:49:40Z" finished-at="2019-03-02T04:49:44Z">
+        <test-method status="PASS" signature="testing_Event_End_time()[pri:5, instance:shop_tool_regression_qa.Konami_shop_tool_regression@51565ec2]" name="testing_Event_End_time" duration-ms="4442" started-at="2019-03-02T20:47:59Z" finished-at="2019-03-02T20:48:03Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testing_Event_End_time -->
-        <test-method status="PASS" signature="checking_Platform()[pri:6, instance:shop_tool_regression_qa.Konami_shop_tool_regression@51565ec2]" name="checking_Platform" duration-ms="1292" started-at="2019-03-02T04:49:44Z" finished-at="2019-03-02T04:49:45Z">
+        <test-method status="PASS" signature="checking_Platform()[pri:6, instance:shop_tool_regression_qa.Konami_shop_tool_regression@51565ec2]" name="checking_Platform" duration-ms="1304" started-at="2019-03-02T20:48:03Z" finished-at="2019-03-02T20:48:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checking_Platform -->
-        <test-method status="PASS" signature="testing_Theme_Start_time()[pri:7, instance:shop_tool_regression_qa.Konami_shop_tool_regression@51565ec2]" name="testing_Theme_Start_time" duration-ms="4303" started-at="2019-03-02T04:49:45Z" finished-at="2019-03-02T04:49:50Z">
+        <test-method status="PASS" signature="testing_Theme_Start_time()[pri:7, instance:shop_tool_regression_qa.Konami_shop_tool_regression@51565ec2]" name="testing_Theme_Start_time" duration-ms="3014" started-at="2019-03-02T20:48:04Z" finished-at="2019-03-02T20:48:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testing_Theme_Start_time -->
-        <test-method status="PASS" signature="testing_Theme_End_time()[pri:8, instance:shop_tool_regression_qa.Konami_shop_tool_regression@51565ec2]" name="testing_Theme_End_time" duration-ms="3009" started-at="2019-03-02T04:49:50Z" finished-at="2019-03-02T04:49:53Z">
+        <test-method status="PASS" signature="testing_Theme_End_time()[pri:8, instance:shop_tool_regression_qa.Konami_shop_tool_regression@51565ec2]" name="testing_Theme_End_time" duration-ms="3015" started-at="2019-03-02T20:48:07Z" finished-at="2019-03-02T20:48:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testing_Theme_End_time -->
+        <test-method status="PASS" signature="newEventThemecreate()[pri:9, instance:shop_tool_regression_qa.Konami_shop_tool_regression@51565ec2]" name="newEventThemecreate" duration-ms="4461" started-at="2019-03-02T20:48:10Z" finished-at="2019-03-02T20:48:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newEventThemecreate -->
+        <test-method status="PASS" signature="EventThemeDelete()[pri:10, instance:shop_tool_regression_qa.Konami_shop_tool_regression@51565ec2]" name="EventThemeDelete" duration-ms="0" started-at="2019-03-02T20:48:15Z" finished-at="2019-03-02T20:48:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EventThemeDelete -->
       </class> <!-- shop_tool_regression_qa.Konami_shop_tool_regression -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

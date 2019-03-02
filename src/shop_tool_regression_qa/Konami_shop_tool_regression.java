@@ -337,7 +337,7 @@ public class Konami_shop_tool_regression {
 			Thread.sleep(1000);
 			ModV.sendKeys(randoModV + "+");
 			ModV.getText();
-			System.out.println("ModValues: is set to");
+			System.out.println("ModValues: is set");
 
 		} catch (Exception e) {
 
@@ -353,7 +353,7 @@ public class Konami_shop_tool_regression {
 			Thread.sleep(1000);
 			Levels.sendKeys(randoLevels + "+");
 			Levels.getText();
-			System.out.println("Levels: is set to");
+			System.out.println("Levels: is set");
 
 		} catch (Exception e) {
 
@@ -524,7 +524,8 @@ public class Konami_shop_tool_regression {
 			((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver
 					.findElement(By.xpath("//mat-option[@id='mat-option-2']//mat-pseudo-checkbox[@class='mat-option-pseudo-checkbox mat-pseudo-checkbox ng-star-inserted mat-pseudo-checkbox-checked']")));
 			
-			WebElement pp = driver.findElement(By.xpath("//mat-option[@id='mat-option-2']"));
+			WebElement pp = driver
+					.findElement(By.xpath("//mat-option[@id='mat-option-2']"));		 /* This is bit closes the platform dd */
 			pp.sendKeys(Keys.ESCAPE);
 			
 			
@@ -565,61 +566,52 @@ public class Konami_shop_tool_regression {
 	@Test(priority = 7)
 	public void testing_Theme_Start_time() throws Exception {
 		// clicks Start Time(UTC) field to launch Calendar
-		WebDriverWait wait = new WebDriverWait(driver, 20); /* making it wait */
+		WebDriverWait wait = new WebDriverWait(driver, 10); /* making it wait WebElement */
+		
+		WebElement element = driver.findElement(
+				By.xpath("//h3[contains(text(),'PBW')]")); 	/* not part of calendar but This bit SCROLLS TO VIEW */
+		JavascriptExecutor js =(JavascriptExecutor)driver;
+		js.executeScript("arguments[0].scrollIntoView(true);",element);
 
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", /* \\\\\This is the new JS Executor\\\\\ */
 				driver.findElement(By.xpath("//div[@class='mat-form-field-wrapper']//input[@id='mat-input-12']")));
-
-		/*
-		 * *******This bit right here may be going out******** WebElement ThemeStart =
-		 * wait.until(ExpectedConditions .elementToBeClickable(By.xpath(
-		 * "//div[@class='mat-form-field-wrapper']//input[@id='mat-input-12']")));
-		 * ThemeStart.click();
-		 */
-
 		// clicks Year drop-down button
-		// WebDriverWait wait = new WebDriverWait(driver, 10);
-		WebElement yrDropDown = wait.until(ExpectedConditions
-				.visibilityOfElementLocated(By.xpath("//span[@class='owl-dt-control-button-arrow']")));
-		yrDropDown.click();
-		// selects year 2020
-		WebElement pickAyr = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();",
+				driver.findElement(By.xpath("//span[@class='owl-dt-control-button-arrow']")));
+		// selects year 2021
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(By.xpath(
 				"//table[@class='owl-dt-calendar-table owl-dt-calendar-multi-year-table']//span[text()='2021']")));
-		pickAyr.click();
-		// selects month of May for year 2020
-		WebElement pickAmonth = wait.until(ExpectedConditions
-				.visibilityOfElementLocated(By.xpath("//tr[@class='ng-star-inserted']//span[contains(text(),'Mar')]")));
-		pickAmonth.click();
-		// selects 10th day of May 2020
-		WebElement pickAdate = wait.until(ExpectedConditions
-				.visibilityOfElementLocated(By.xpath("//tr[@class='ng-star-inserted']//span[contains(text(),'12')]")));
-		pickAdate.click();
+
+		// selects month of Mar for year 2021
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();",
+				driver.findElement(By.xpath("//tr[@class='ng-star-inserted']//span[contains(text(),'Mar')]")));
+
+		// selects 15th day of Mar 2021
+
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();",
+				driver.findElement(By.xpath("//tr[@class='ng-star-inserted']//span[contains(text(),'15')]")));
+
 		// selects an hour
-		WebElement pickANhr = wait
-				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@aria-label='Add a hour']")));
-		pickANhr.click();
+
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();",
+				driver.findElement(By.xpath("//button[@aria-label='Add a hour']")));
+
 		// selects minutes
 		WebElement pickMinutes = wait.until(
 				ExpectedConditions.visibilityOfElementLocated(By.xpath("(//input[@class='owl-dt-timer-input'])[2]")));
 		pickMinutes.clear();
-		pickMinutes.sendKeys("40");
+		pickMinutes.sendKeys("20");
 		// Read Start Date
 		Thread.sleep(1500);
-		String StartsFrom = driver
+		String Startfrm = driver
 				.findElement(By.xpath("(//div[@role='radiogroup']//span[@class='owl-dt-container-info-value'])[2]"))
 				.getText();
-		System.out.println("Shop Theme Starts from " + StartsFrom);
+		System.out.println("Shop Theme Starts from " + Startfrm);
 		// Clicking Set after selection
-
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();",
 				driver.findElement(By.xpath("//span[contains(text(),'Set')]")));
 
-		/*
-		 * WebElement SetStart = wait
-		 * .until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-		 * "//span[contains(text(),'Set')]"))); SetStart.click();
-		 */
-		Thread.sleep(1500);
+		Thread.sleep(1000);
 
 	}		 /* This is where testing_event_start_time() ends */
 
@@ -672,6 +664,67 @@ public class Konami_shop_tool_regression {
 
 		Thread.sleep(1000);
 	} 			/* This is where testing_Theme_End_time ends */
+
+	//tests new Shop Event Themes creation and delete
+@Test(priority = 9)
+	public void newEventThemecreate() throws Exception {
+	
+	//creates new Shop Event Themes
+	try {
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver
+				.findElement(By.xpath("(//span[@class='mat-button-wrapper']//*[text()[contains(.,'add_circle')]])[1]")));
+	}catch (Exception e) {
+		System.out.println("Failed to create new Shop Event Themes");
+		throw (e);
+	}
+	//Enters name for Shop Event Themes
+	try {
+		WebElement eThemeName = driver.findElement(By.xpath("//input[@id='mat-input-16']"));
+		eThemeName.sendKeys("buychips");
+		System.out.println("Theme Name: is set");
+	} catch (Exception e) {
+		System.out.println("Theme Name: Failed to set");
+		throw (e);
+	}
+	//Enters Asset Name/Theme ID for Shop Event Themes
+	try {
+		WebElement assetNtID = driver.findElement(By.xpath("//input[@id='mat-input-17']"));
+		assetNtID.clear();
+		Thread.sleep(1000);
+		assetNtID.sendKeys("ClassyRoses_6Item");
+		System.out.println("Asset Name/Theme ID: is set");
+	} catch (Exception e) {
+		System.out.println("Asset Name/Theme ID: Failed to set");
+		throw (e);
+	}
+	//creates ANOTHER new Shop Event Themes
+	Thread.sleep(1000);
+	try {
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver
+				.findElement(By.xpath("(//span[@class='mat-button-wrapper']//*[text()[contains(.,'add_circle')]])[1]")));
+	}catch (Exception e) {
+		System.out.println("Failed to create another new Shop Event Themes");
+		throw (e);
+		}
+	//Deletes recently created new Shop Event Themes
+	Thread.sleep(1500);
+	try {
+		driver.findElement(By.xpath("(//div[@formarrayname='ShopEventThemes']//mat-icon[text()='delete'])[3]")).click();
+	}catch (Exception e) {
+		
+		System.out.println("Deletes recently created new Shop Event Themes");
+		throw (e);
+	}
+	Thread.sleep(500);
+}    /* This is where newEventThemecreate ends */
+
+	
+	@Test(priority = 10)
+	public void EventThemeDelete() throws Exception {
+
+		
+	}
+
 
 
 	

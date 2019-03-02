@@ -5,8 +5,8 @@
     <classes>
       <class name="shop_tool_regression_qa.Konami_shop_tool_regression">
         <methods>
+          <include name="EventThemeDelete"/>
           <include name="launchBrowser"/>
-          <include name="verify_message"/>
           <include name="importJSON"/>
         </methods>
       </class> <!-- shop_tool_regression_qa.Konami_shop_tool_regression -->
