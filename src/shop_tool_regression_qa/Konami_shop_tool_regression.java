@@ -11,6 +11,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -767,16 +768,27 @@ public class Konami_shop_tool_regression {
 			paltApple.click();
 			Thread.sleep(500);
 			//Closing popup
-			WebElement epp = wait.until(ExpectedConditions
-					.visibilityOfElementLocated(By.xpath("//div[@class='cdk-overlay-backdrop cdk-overlay-transparent-backdrop cdk-overlay-backdrop-showing']")));
-			epp.sendKeys(Keys.ESCAPE); 	 /* This is bit closes the platform dd */
 			
+			/* This is bit closes the platform dd */
+			Actions closep = new Actions(driver);
+			closep.moveToElement(driver.findElement(By.xpath("(//div[@class='cdk-overlay-pane'])[2]")));
+			closep.sendKeys(Keys.ESCAPE);
+			closep.build().perform();
+				
 			System.out.println("Platform: Apple selected");
 
 		} catch (Exception e) {
 			System.out.println("Failed to select Platform: Apple");
 			throw (e);
 		}
+		//Save Shop after editing
+		try {
+			driver.findElement(By.xpath("(//button[@class='mat-raised-button']//span[contains(text(),'Save')])[2]")).click();
+		} catch (Exception e) {
+			System.out.println("Failed to select Platform: Apple");
+			throw (e);
+		}
+		Thread.sleep(2000);
 		
 	} 	/* This is where editing_Shop_Platform() ends */
 
