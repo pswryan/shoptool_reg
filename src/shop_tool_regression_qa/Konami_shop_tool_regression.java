@@ -1,6 +1,9 @@
 package shop_tool_regression_qa;
 
 import org.testng.annotations.Test;
+
+import java.util.List;
+
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -10,6 +13,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -720,16 +724,65 @@ public class Konami_shop_tool_regression {
 
 	
 	@Test(priority = 10)
-	public void EventThemeDelete() throws Exception {
-
+	public void Shops_edit() throws Exception {
 		
-	}
+		//Edits existing Shop
+		try {
+			driver.findElement(By.xpath("(//div[@formarrayname='FormShopLogics']//mat-icon[text()='edit'])[1]")).click();
+		}catch (Exception e) {
+				System.out.println("Faild to click Edit in existing Shop");
+			throw (e); 
+		}
+		Thread.sleep(1500);
+	//Edits Shop Priority 
+		  WebDriverWait wait = new WebDriverWait(driver, 10); WebElement Editp =
+		  wait.until(ExpectedConditions .visibilityOfElementLocated(By.xpath(
+		  "(//div[@class='mat-form-field-wrapper']//input[@id='Priority'])[2]"))); 
+		  Editp.clear();
+		  Thread.sleep(1000);
+		  Editp.sendKeys("10");
+		  		  
+		/*
+		 * List<WebElement> list = driver.findElements(By.
+		 * xpath("//div[@id='cdk-overlay-2']//h1[text()='Edit Shop']"));
+		 * Assert.assertFalse(list.size() > 0, "Edit Shop");
+		 */
+				
+	}		 /* This is where Shops_edit ends */
 
+	@Test(priority = 11) public void editing_Shop_Platform() throws Exception{
+		
+		//clicks Platform dropdown 
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver
+				.findElement(By.xpath("(//div[@class='mat-select-arrow-wrapper']//div[@class='mat-select-arrow'])[2]")));
+		
+		// Selects Platform: Apple 
+		try {
+			// Adds Apple as Shop Platform
+			
+			WebDriverWait wait = new WebDriverWait(driver, 10);
+			//Selecting Apple
+			WebElement paltApple = wait.until(ExpectedConditions
+					.visibilityOfElementLocated(By.xpath("(//div[@class='mat-select-content ng-trigger ng-trigger-fadeInContent']//mat-pseudo-checkbox[@class='mat-option-pseudo-checkbox mat-pseudo-checkbox ng-star-inserted'])[1]")));
+			paltApple.click();
+			Thread.sleep(500);
+			//Closing popup
+			WebElement epp = wait.until(ExpectedConditions
+					.visibilityOfElementLocated(By.xpath("//div[@class='cdk-overlay-backdrop cdk-overlay-transparent-backdrop cdk-overlay-backdrop-showing']")));
+			epp.sendKeys(Keys.ESCAPE); 	 /* This is bit closes the platform dd */
+			
+			System.out.println("Platform: Apple selected");
 
+		} catch (Exception e) {
+			System.out.println("Failed to select Platform: Apple");
+			throw (e);
+		}
+		
+	} 	/* This is where editing_Shop_Platform() ends */
 
 	
 	/*
-	 * @Test(priority = 10) public void Saving_Edited_Event() throws Exception{
+	 * @Test(priority = 12) public void Saving_Edited_Event() throws Exception{
 	 * WebDriverWait wait = new WebDriverWait(driver, 10); WebElement saveEvent =
 	 * wait.until(ExpectedConditions.visibilityOfElementLocated(By.
 	 * xpath("//button[@class='mat-raised-button']//span[contains(text(),'Save Shop Event')]"
