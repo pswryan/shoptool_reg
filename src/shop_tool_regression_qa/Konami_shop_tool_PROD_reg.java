@@ -20,9 +20,9 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 @SuppressWarnings("unused")
-public class Konami_shop_tool_regression {
+public class Konami_shop_tool_PROD_reg {
 	WebDriver driver;
-	public String baseUrl = "http://shopadmin-qa.playstudios.com/shopadmin/#/konamishop/management/shopevents";
+	public String baseUrl = "http://shopadmin.playstudios.com/shopadmin/#/konamishop/management/shopevents";
 
 	// Runs before test
 	@BeforeSuite
@@ -86,13 +86,6 @@ public class Konami_shop_tool_regression {
 		 * System.out.println("Element is Absent"); }
 		 */
 
-		// checking name field
-		WebElement elem2 = driver.findElement(By.xpath("//input[@ng-reflect-id=\"Name\"]"));
-		boolean el2 = elem2.isDisplayed();
-		if (el2)
-			System.out.println("Present: Name");
-		else
-			System.out.println("Absent: Name");
 
 		// checking PlayerID
 		if (driver.findElements(By.xpath("//input[@id='PlayerIds']")).size() != 0) {
@@ -793,13 +786,20 @@ public class Konami_shop_tool_regression {
 	} 	/* This is where editing_Shop_Platform() ends */
 
 	
-	/*
-	 * @Test(priority = 12) public void Saving_Edited_Event() throws Exception{
-	 * WebDriverWait wait = new WebDriverWait(driver, 10); WebElement saveEvent =
-	 * wait.until(ExpectedConditions.visibilityOfElementLocated(By.
-	 * xpath("//button[@class='mat-raised-button']//span[contains(text(),'Save Shop Event')]"
-	 * ))); saveEvent.click(); }
-	 */
+	
+	  @Test(priority = 12) public void Saving_Edited_Event() throws Exception{
+	  WebDriverWait wait = new WebDriverWait(driver, 10); WebElement saveEvent =
+	  wait.until(ExpectedConditions.visibilityOfElementLocated(By.
+	  xpath("//button[@class='mat-raised-button']//span[contains(text(),'Save Shop Event')]"
+	  ))); saveEvent.click(); 
+	  Thread.sleep(2000);}
+	 
+	  //downloads edited config
+	  @Test(priority = 13) 
+	  public void dlConfig() throws Exception{
+		  //downloads edited config
+		  driver.findElement(By.xpath("//span[contains(text(),'Export JSON')]")).click();
+		 }
 	 
 	
 

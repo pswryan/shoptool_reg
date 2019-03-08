@@ -16,5 +16,11 @@
 	<classpathentry kind="lib" path="C:/Users/ryan.wahid/commons-lang3-3.8.1/commons-lang3-3.8.1-sources.jar"/>
 	<classpathentry kind="lib" path="C:/Users/ryan.wahid/commons-lang3-3.8.1/commons-lang3-3.8.1-tests.jar"/>
 	<classpathentry kind="lib" path="C:/Users/ryan.wahid/commons-lang3-3.8.1/commons-lang3-3.8.1-test-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ryan.wahid/video libs for automation/AVIDemo.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ryan.wahid/video libs for automation/ConcatDemo.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ryan.wahid/video libs for automation/jai_core.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ryan.wahid/video libs for automation/jmf.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ryan.wahid/video libs for automation/MonteScreenRecorder.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ryan.wahid/video libs for automation/MovieMaker.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

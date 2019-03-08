@@ -9,11 +9,81 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="7">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">6,533</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">12</td><td class="num">0</td><td class="num attn">1</td><td class="num">47,943</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">shop_tool_regression_qa.Konami_shop_tool_Stage_reg</td><td><a href="#m0">verify_message</a></td><td rowspan="1">1551594995477</td><td rowspan="1">15</td></tr><tr class="passedodd"><td rowspan="1">shop_tool_regression_qa.Konami_shop_tool_regression</td><td><a href="#m1">verify_message</a></td><td rowspan="1">1551594995455</td><td rowspan="1">19</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">shop_tool_regression_qa.Konami_shop_tool_QA_reg</td><td><a href="#m0">Saving_Edited_Event</a></td><td rowspan="1">1552062569685</td><td rowspan="1">10206</td></tr><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="12">shop_tool_regression_qa.Konami_shop_tool_QA_reg</td><td><a href="#m1">Shops_edit</a></td><td rowspan="1">1552062563589</td><td rowspan="1">2823</td></tr><tr class="passedeven"><td><a href="#m2">checking_Platform</a></td><td rowspan="1">1552062551838</td><td rowspan="1">1307</td></tr><tr class="passedeven"><td><a href="#m3">dlConfig</a></td><td rowspan="1">1552062579893</td><td rowspan="1">70</td></tr><tr class="passedeven"><td><a href="#m4">editing_Shop_Platform</a></td><td rowspan="1">1552062566413</td><td rowspan="1">3271</td></tr><tr class="passedeven"><td><a href="#m5">newEventThemecreate</a></td><td rowspan="1">1552062559124</td><td rowspan="1">4464</td></tr><tr class="passedeven"><td><a href="#m6">testing_Event_End_time</a></td><td rowspan="1">1552062547462</td><td rowspan="1">4375</td></tr><tr class="passedeven"><td><a href="#m7">testing_Theme_End_time</a></td><td rowspan="1">1552062556144</td><td rowspan="1">2979</td></tr><tr class="passedeven"><td><a href="#m8">testing_Theme_Start_time</a></td><td rowspan="1">1552062553146</td><td rowspan="1">2997</td></tr><tr class="passedeven"><td><a href="#m9">testing_event_start_time</a></td><td rowspan="1">1552062542988</td><td rowspan="1">4473</td></tr><tr class="passedeven"><td><a href="#m10">tests_field_values</a></td><td rowspan="1">1552062535745</td><td rowspan="1">7242</td></tr><tr class="passedeven"><td><a href="#m11">verify_field_present</a></td><td rowspan="1">1552062535305</td><td rowspan="1">439</td></tr><tr class="passedeven"><td><a href="#m12">verify_message</a></td><td rowspan="1">1552062535284</td><td rowspan="1">19</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">shop_tool_regression_qa.Konami_shop_tool_Stage_reg#verify_message</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">shop_tool_regression_qa.Konami_shop_tool_regression#verify_message</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Default test</h2><h3 id="m0">shop_tool_regression_qa.Konami_shop_tool_QA_reg#Saving_Edited_Event</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //button[@class=&apos;mat-raised-button&apos;]//span[contains(text(),&apos;Save 1Shop Event&apos;)] (tried for 10 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at shop_tool_regression_qa.Konami_shop_tool_QA_reg.Saving_Edited_Event(Konami_shop_tool_QA_reg.java:793)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//button[@class=&apos;mat-raised-button&apos;]//span[contains(text(),&apos;Save 1Shop Event&apos;)]&quot;}
+  (Session info: chrome=72.0.3626.121)
+  (Driver info: chromedriver=2.43.600210 (68dcf5eebde37173d4027fa8635e332711d2874a),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:48&apos;
+System info: host: &apos;RYANW2-5810&apos;, ip: &apos;10.0.75.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_191&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.43.600210 (68dcf5eebde371..., userDataDir: C:\Users\RYAN~1.WAH\AppData...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:60641}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 72.0.3626.121, webStorageEnabled: true}
+Session ID: bffe93ad39d13f498bf699276e581638
+*** Element info: {Using=xpath, value=//button[@class=&apos;mat-raised-button&apos;]//span[contains(text(),&apos;Save 1Shop Event&apos;)]}
+	at sun.reflect.GeneratedConstructorAccessor14.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 26 more
+</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">shop_tool_regression_qa.Konami_shop_tool_QA_reg#Shops_edit</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">shop_tool_regression_qa.Konami_shop_tool_QA_reg#checking_Platform</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">shop_tool_regression_qa.Konami_shop_tool_QA_reg#dlConfig</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">shop_tool_regression_qa.Konami_shop_tool_QA_reg#editing_Shop_Platform</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">shop_tool_regression_qa.Konami_shop_tool_QA_reg#newEventThemecreate</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">shop_tool_regression_qa.Konami_shop_tool_QA_reg#testing_Event_End_time</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">shop_tool_regression_qa.Konami_shop_tool_QA_reg#testing_Theme_End_time</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">shop_tool_regression_qa.Konami_shop_tool_QA_reg#testing_Theme_Start_time</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">shop_tool_regression_qa.Konami_shop_tool_QA_reg#testing_event_start_time</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m10">shop_tool_regression_qa.Konami_shop_tool_QA_reg#tests_field_values</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m11">shop_tool_regression_qa.Konami_shop_tool_QA_reg#verify_field_present</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m12">shop_tool_regression_qa.Konami_shop_tool_QA_reg#verify_message</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

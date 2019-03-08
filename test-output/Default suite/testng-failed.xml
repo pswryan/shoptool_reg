@@ -3,17 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="shop_tool_regression_qa.Konami_shop_tool_Stage_reg">
+      <class name="shop_tool_regression_qa.Konami_shop_tool_QA_reg">
         <methods>
-          <include name="testing_event_start_time"/>
-          <include name="importJSON"/>
-          <include name="testing_Theme_Start_time"/>
           <include name="launchBrowser"/>
-          <include name="testing_Theme_End_time"/>
-          <include name="testing_Event_End_time"/>
-          <include name="verify_field_present"/>
+          <include name="Saving_Edited_Event"/>
+          <include name="importJSON"/>
         </methods>
-      </class> <!-- shop_tool_regression_qa.Konami_shop_tool_Stage_reg -->
+      </class> <!-- shop_tool_regression_qa.Konami_shop_tool_QA_reg -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
